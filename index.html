@@ -12,121 +12,116 @@
     <script defer src="script.js"></script>
 </head>
 <body>
-
     <div class="container">
-            <h1 class="title">Подбор аккордов для комуза</h1>
-            <form action="" class="options-form js-form">
-                <div class="paper">
-                    <fieldset class="choose-wrapper">
-                        <legend class="choose-title">Строй комуза (начиная "с пола")</legend>
-                        <label >
-                            <input type="radio" name="instrumentTune" value="e,a,e" class="visually-hidden choose-input" required>
-                            <span class="choose-item">E-A-E (ми-ля-ми)</span>
-                        </label>
-                        <label >
-                            <input type="radio" checked name="instrumentTune" value="e,a,d" class="visually-hidden choose-input" required>
-                            <span class="choose-item">E-A-D (ми-ля-ре)</span>
-                        </label>
-                        <label >
-                            <input type="radio" name="instrumentTune" value="d,a,e" class="visually-hidden choose-input" required>
-                            <span class="choose-item">D-A-E (ре-ля-ми)</span>
-                        </label>
-                        <label >
-                            <input type="radio" name="instrumentTune" value="d,a,d" class="visually-hidden choose-input" required>
-                            <span class="choose-item">D-A-D (ре-ля-ре)</span>
-                        </label>
-                    </fieldset>
-                </div>
-                <div class="paper">
-                    <fieldset class="choose-wrapper">
-                        <legend class="choose-title">Тоника аккорда</legend>
-                        <label >
-                            <input type="radio" name="rootNote" value="a" class="visually-hidden choose-input" required>
-                            <span class="choose-item">A (ля)</span>
-                        </label>
-                        <label >
-                            <input type="radio" name="rootNote" value="a#" class="visually-hidden choose-input" required>
-                            <span class="choose-item">A# (ля-диез)</span>
-                        </label>
-                        <label >
-                            <input type="radio" name="rootNote" value="b" class="visually-hidden choose-input" required>
-                            <span class="choose-item">B (си)</span>
-                        </label>
-                        <label >
-                            <input type="radio" name="rootNote" value="c" class="visually-hidden choose-input" required>
-                            <span class="choose-item">C (до)</span>
-                        </label>
-                        <label >
-                            <input type="radio" name="rootNote" value="c#" class="visually-hidden choose-input" required>
-                            <span class="choose-item">C# (до-диез)</span>
-                        </label>
-                        <label >
-                            <input type="radio" checked name="rootNote" value="d" class="visually-hidden choose-input" required>
-                            <span class="choose-item">D (ре)</span>
-                        </label>
-                        <label >
-                            <input type="radio" name="rootNote" value="d#" class="visually-hidden choose-input" required>
-                            <span class="choose-item">D# (ре-диез)</span>
-                        </label>
-                        <label >
-                            <input type="radio" name="rootNote" value="e" class="visually-hidden choose-input" required>
-                            <span class="choose-item">E (ми)</span>
-                        </label>
-                        <label >
-                            <input type="radio" name="rootNote" value="f" class="visually-hidden choose-input" required>
-                            <span class="choose-item">F (фа)</span>
-                        </label>
-                        <label >
-                            <input type="radio" name="rootNote" value="f#" class="visually-hidden choose-input" required>
-                            <span class="choose-item">F# (фа-диез)</span>
-                        </label>
-                        <label >
-                            <input type="radio" name="rootNote" value="g" class="visually-hidden choose-input" required>
-                            <span class="choose-item">G (соль)</span>
-                        </label>
-                        <label >
-                            <input type="radio" name="rootNote" value="g#" class="visually-hidden choose-input" required>
-                            <span class="choose-item">G# (соль-диез)</span>
-                        </label>
-                    </fieldset>
-                </div>
-                <div class="paper">
-                    <fieldset class="choose-wrapper">
-                        <legend class="choose-title">Тип аккорда</legend>
-                        <label >
-                            <input type="radio" checked name="chordType" value="major" class="visually-hidden choose-input" required>
-                            <span class="choose-item">Мажор</span>
-                        </label>
-                        <label >
-                            <input type="radio" name="chordType" value="minor" class="visually-hidden choose-input" required>
-                            <span class="choose-item">Минор</span>
-                        </label>
-                        <label >
-                            <input type="radio" name="chordType" value="sus2" class="visually-hidden choose-input" required>
-                            <span class="choose-item">Sus2</span>
-                        </label>
-                        <label >
-                            <input type="radio" name="chordType" value="sus4" class="visually-hidden choose-input" required>
-                            <span class="choose-item">Sus4</span>
-                        </label>
-                        <label >
-                            <input type="radio" name="chordType" value="major7" class="visually-hidden choose-input" required>
-                            <span class="choose-item">Мажорный септ</span>
-                        </label>
-                        <label >
-                            <input type="radio" name="chordType" value="minor7" class="visually-hidden choose-input" required>
-                            <span class="choose-item">Минорный септ</span>
-                        </label>
-                    </fieldset>
-                </div>
-            </form>
-        <div class="paper">
-            <div class="js-data-root data-root">
-
+        <h1 class="title">Подбор аккордов для комуза</h1>
+        <form action="" class="options-form js-form">
+            <div class="paper">
+                <fieldset class="choose-wrapper">
+                    <legend class="choose-title">Строй комуза (начиная "с пола")</legend>
+                    <label >
+                        <input type="radio" name="instrumentTune" value="e,a,e" class="visually-hidden choose-input" required>
+                        <span class="choose-item">E-A-E (ми-ля-ми)</span>
+                    </label>
+                    <label >
+                        <input type="radio" checked name="instrumentTune" value="e,a,d" class="visually-hidden choose-input" required>
+                        <span class="choose-item">E-A-D (ми-ля-ре)</span>
+                    </label>
+                    <label >
+                        <input type="radio" name="instrumentTune" value="d,a,e" class="visually-hidden choose-input" required>
+                        <span class="choose-item">D-A-E (ре-ля-ми)</span>
+                    </label>
+                    <label >
+                        <input type="radio" name="instrumentTune" value="d,a,d" class="visually-hidden choose-input" required>
+                        <span class="choose-item">D-A-D (ре-ля-ре)</span>
+                    </label>
+                </fieldset>
             </div>
-
+            <div class="paper">
+                <fieldset class="choose-wrapper">
+                    <legend class="choose-title">Тоника аккорда</legend>
+                    <label >
+                        <input type="radio" name="rootNote" value="a" class="visually-hidden choose-input" required>
+                        <span class="choose-item">A (ля)</span>
+                    </label>
+                    <label >
+                        <input type="radio" name="rootNote" value="a#" class="visually-hidden choose-input" required>
+                        <span class="choose-item">A# (ля-диез)</span>
+                    </label>
+                    <label >
+                        <input type="radio" name="rootNote" value="b" class="visually-hidden choose-input" required>
+                        <span class="choose-item">B (си)</span>
+                    </label>
+                    <label >
+                        <input type="radio" name="rootNote" value="c" class="visually-hidden choose-input" required>
+                        <span class="choose-item">C (до)</span>
+                    </label>
+                    <label >
+                        <input type="radio" name="rootNote" value="c#" class="visually-hidden choose-input" required>
+                        <span class="choose-item">C# (до-диез)</span>
+                    </label>
+                    <label >
+                        <input type="radio" checked name="rootNote" value="d" class="visually-hidden choose-input" required>
+                        <span class="choose-item">D (ре)</span>
+                    </label>
+                    <label >
+                        <input type="radio" name="rootNote" value="d#" class="visually-hidden choose-input" required>
+                        <span class="choose-item">D# (ре-диез)</span>
+                    </label>
+                    <label >
+                        <input type="radio" name="rootNote" value="e" class="visually-hidden choose-input" required>
+                        <span class="choose-item">E (ми)</span>
+                    </label>
+                    <label >
+                        <input type="radio" name="rootNote" value="f" class="visually-hidden choose-input" required>
+                        <span class="choose-item">F (фа)</span>
+                    </label>
+                    <label >
+                        <input type="radio" name="rootNote" value="f#" class="visually-hidden choose-input" required>
+                        <span class="choose-item">F# (фа-диез)</span>
+                    </label>
+                    <label >
+                        <input type="radio" name="rootNote" value="g" class="visually-hidden choose-input" required>
+                        <span class="choose-item">G (соль)</span>
+                    </label>
+                    <label >
+                        <input type="radio" name="rootNote" value="g#" class="visually-hidden choose-input" required>
+                        <span class="choose-item">G# (соль-диез)</span>
+                    </label>
+                </fieldset>
+            </div>
+            <div class="paper">
+                <fieldset class="choose-wrapper">
+                    <legend class="choose-title">Тип аккорда</legend>
+                    <label >
+                        <input type="radio" checked name="chordType" value="major" class="visually-hidden choose-input" required>
+                        <span class="choose-item">Мажор</span>
+                    </label>
+                    <label >
+                        <input type="radio" name="chordType" value="minor" class="visually-hidden choose-input" required>
+                        <span class="choose-item">Минор</span>
+                    </label>
+                    <label >
+                        <input type="radio" name="chordType" value="sus2" class="visually-hidden choose-input" required>
+                        <span class="choose-item">Sus2</span>
+                    </label>
+                    <label >
+                        <input type="radio" name="chordType" value="sus4" class="visually-hidden choose-input" required>
+                        <span class="choose-item">Sus4</span>
+                    </label>
+                    <label >
+                        <input type="radio" name="chordType" value="major7" class="visually-hidden choose-input" required>
+                        <span class="choose-item">Мажорный септ</span>
+                    </label>
+                    <label >
+                        <input type="radio" name="chordType" value="minor7" class="visually-hidden choose-input" required>
+                        <span class="choose-item">Минорный септ</span>
+                    </label>
+                </fieldset>
+            </div>
+        </form>
+        <div class="paper">
+            <div class="js-data-root data-root"></div>
         </div>
     </div>
-
 </body>
 </html>

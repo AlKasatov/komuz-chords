@@ -49,7 +49,6 @@ function renderData(activeFretsDataArray){
         const neck = document.createElement('div')
         neck.classList.add('neck')
         dataRoot.appendChild(neck)
-        let currentResult = ''
         for(let i = 0; i < tune.length; i++){
             let stringWrapper = document.createElement('div')
             stringWrapper.classList.add('string')
@@ -59,10 +58,12 @@ function renderData(activeFretsDataArray){
             stringName.classList.add('string-name')
             stringWrapper.appendChild(stringName)
             stringName.textContent = tune[i].toUpperCase()
+
             for(let k = 0; k <= FRETS_COUNT; k++){
                 let fret = document.createElement('div')
                 fret.classList.add('fret')
                 stringWrapper.appendChild(fret)
+
                 if(FRETS_DOTS.includes(k)){
                     fret.classList.add('dot')
                 }
@@ -75,5 +76,4 @@ function renderData(activeFretsDataArray){
             }
         }
     })
-
 }

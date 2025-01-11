@@ -1,8 +1,13 @@
-
-
 const scale = ['a', 'a#', 'b', 'c', 'c#', 'd', 'd#', 'e', 'f', 'f#', 'g', 'g#']
 
-
+const chordsStructure = {
+    major: [0,4,7],
+    minor: [0,3,7],
+    sus2: [0,2,7],
+    sus4: [0,5,7],
+    major7: [0, 4, 10],
+    minor7: [0, 3, 10],
+}
 function findMatchFrets(scale, tune, fretCount, chord){
     const matrix = []
     tune.forEach((item, index) => {
@@ -60,16 +65,9 @@ function filterComfortableStretchCombinations(combinations, stretch){
             }
             return acc
         }, {max:greaterNullValues[0], min: greaterNullValues[0]})
+
         return (max - min + 1) <= stretch
     })
-}
-const chordsStructure = {
-    major: [0,4,7],
-    minor: [0,3,7],
-    sus2: [0,2,7],
-    sus4: [0,5,7],
-    major7: [0, 4, 10],
-    minor7: [0, 3, 10],
 }
 function getChord(rootNote, chordType){
     const index = scale.indexOf(rootNote)
