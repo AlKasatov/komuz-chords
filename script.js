@@ -42,10 +42,10 @@ if(form && dataRoot){
 
 
 function renderData(activeFretsDataArray){
+    dataRoot.innerHTML = ''
     const {data, tune} = activeFretsDataArray
 
     data.forEach(item => {
-
         const neck = document.createElement('div')
         neck.classList.add('neck')
         dataRoot.appendChild(neck)
