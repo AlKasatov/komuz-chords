@@ -38,8 +38,8 @@ body:before{
     text-align: center;
 }
 .container {
-    min-width: 50dvw;
-    flex-grow: 1;
+    max-width: 1000px;
+    width: 100%;
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -137,8 +137,16 @@ body:before{
     cursor: pointer;
     border:none;
 }
+.data-root{
+    margin: 0 auto;
+    max-width: fit-content;
+    overflow: auto;
+}
 .neck{
     margin-bottom: 10px;
+    width: 100%;
+    /*TODO расхардкодить это значение*/
+    min-width: 700px;
 }
 .string-name{
     width: 20px;
@@ -146,7 +154,6 @@ body:before{
     color: aliceblue;
     font-size: 12px;
     line-height: 12px;
-
 }
 .string{
     display:flex;
