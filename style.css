@@ -42,6 +42,7 @@ body:before{
     width: 100%;
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
     gap: 5px;
     position: relative;
     padding: 10px 25px;

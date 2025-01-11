@@ -63,20 +63,18 @@ function filterComfortableStretchCombinations(combinations, stretch){
         return (max - min + 1) <= stretch
     })
 }
-
+const chordsStructure = {
+    major: [0,4,7],
+    minor: [0,3,7],
+    sus2: [0,2,7],
+    sus4: [0,5,7],
+    major7: [0, 4, 10],
+    minor7: [0, 3, 10],
+}
 function getChord(rootNote, chordType){
-    const chordsStructure = {
-        major: [0,4,7],
-        minor: [0,3,7],
-    }
     const index = scale.indexOf(rootNote)
     return chordsStructure[chordType].map(item => scale[(index + item) % scale.length])
 }
-
-
-
-
-
 
 onmessage = function(event) {
     const {fretsCount, stretch, chordType, instrumentTune, rootNote} = event.data
