@@ -18,7 +18,6 @@ const dataRoot = document.querySelector('.js-data-root')
 
 if(form && dataRoot){
     const changeFormHandler = () => {
-        form.classList.add('disabled')
         const formData = new FormData(form);
         const data = {
             fretsCount: FRETS_COUNT,
@@ -31,8 +30,6 @@ if(form && dataRoot){
             renderData(result)
         }).catch((er) => {
             console.log(er)
-        }).finally(() => {
-            form.classList.remove('disabled')
         })
     }
 
