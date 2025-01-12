@@ -3,6 +3,10 @@
     padding: 0;
     box-sizing: border-box;
 }
+html, body {
+    height: 100%;
+    overflow: hidden;
+}
 body {
     display: flex;
     flex-direction: column;
@@ -10,7 +14,7 @@ body {
     gap: 10px;
     font-size: 16px;
     justify-content: center;
-    background: url('./komuz-photo.jpg') no-repeat center/cover;
+    background: black url('./wood-pattern.png') repeat center/auto;
     min-height: 100dvh;
     font-family: "Roboto Serif", serif;
     font-optical-sizing: auto;
@@ -26,23 +30,28 @@ body:before{
     right: 0;
     bottom: 0;
     left: 0;
-    background-color: rgba(0,0,0,.73);
+    background-color: rgba(0,0,0,.8);
 }
 .title {
     color: aliceblue;
     position: relative;
     text-align: center;
-    padding-bottom: 5px;
+    font-size: 20px;
+}
+.wrapper{
+    overflow: auto;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
 }
 .container {
     max-width: 1000px;
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-    gap: 5px;
     position: relative;
     padding: 10px 25px;
+    flex-grow: 1;
 }
 .container:before, .container:after {
     content: '';
@@ -66,11 +75,10 @@ body:before{
     background-color: rgba(255,255,255,.2);
     backdrop-filter: blur(2px);
     color: black;
+    margin-bottom: 5px;
 }
 .options-form{
-    display:flex;
-    flex-direction: column;
-    gap: 5px;
+   margin-top: 10px;
 }
 .options-form.disabled{
     pointer-events: none;
@@ -130,7 +138,7 @@ body:before{
     border:none;
 }
 .data-root{
-    margin: 0 auto;
+    margin: 10px auto 0;
     max-width: fit-content;
     overflow: auto;
 }
@@ -192,11 +200,19 @@ body:before{
     box-sizing: border-box;
 }
 .fret.active.open:after{
-    background-color: transparent;
+    background-color: burlywood;
     border: 2px solid black;
 }
 .fret.open{
-    width: 5px;
+    width: 10px;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+}
+.copy {
+    color: white;
+    text-align: center;
+    font-size: 10px;
+    opacity: 0.8;
 }
 
 .visually-hidden {
