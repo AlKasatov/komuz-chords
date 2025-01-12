@@ -23,10 +23,7 @@
 
     function changeFormHandler(){
         const formData = new FormData(form);
-        const data = {
-            fretsCount: FRETS_COUNT,
-            stretch: STRETCH_SIZE
-        }
+        const data = {}
         formData.forEach((value, key) => {
             data[key] = value
         });
@@ -41,33 +38,21 @@
         } = activeFretsDataArray
 
         data.forEach(item => {
-            const neck = document.createElement('div')
-            neck.classList.add('neck')
+            const neck = createDiv('neck')
             dataRoot.appendChild(neck)
             for (let i = 0; i < tune.length; i++) {
-                let stringWrapper = document.createElement('div')
-                stringWrapper.classList.add('string')
+                const stringWrapper = createDiv('string')
                 neck.appendChild(stringWrapper)
-
-                let stringName = document.createElement('div')
-                stringName.classList.add('string-name')
+                const stringName = createDiv('string-name', tune[i].toUpperCase())
                 stringWrapper.appendChild(stringName)
-                stringName.textContent = tune[i].toUpperCase()
 
                 for (let k = 0; k <= FRETS_COUNT; k++) {
-                    let fret = document.createElement('div')
-                    fret.classList.add('fret')
+                    const fret = createDiv('fret')
                     stringWrapper.appendChild(fret)
 
-                    if (FRETS_DOTS.includes(k)) {
-                        fret.classList.add('dot')
-                    }
-                    if (k === 0) {
-                        fret.classList.add('open')
-                    }
-                    if (k === item[i]) {
-                        fret.classList.add('active')
-                    }
+                    FRETS_DOTS.includes(k) && fret.classList.add('dot')
+                    k === 0 && fret.classList.add('open')
+                    k === item[i] && fret.classList.add('active')
                 }
             }
         })
@@ -81,9 +66,7 @@
             for(let i = 0; i < fretCount; i++){
                 const currentNote = scale[(i + indexOfCurrentItem) % scale.length]
                 if (chord.includes(currentNote)) {
-                    matrix[index].push({
-                        [currentNote]: i
-                    })
+                    matrix[index].push([currentNote, i])
                 }
             }
         })
@@ -112,14 +95,14 @@
 
     function filterOnlyUniqNotesCombinations(combinations) {
         return combinations.filter(item => {
-            const keysArr = item.map(item => Object.keys(item)[0])
+            const keysArr = item.map(item => item[0])
             return keysArr.length === new Set(keysArr).size
         })
     }
 
-    function filterComfortableStretchCombinations(combinations, stretch) {
+    function filterComfortableStretchCombinations(combinations) {
         return combinations.filter(item => {
-            const greaterNullValues = item.map(item => Object.values(item)[0]).filter(item => item > 0)
+            const greaterNullValues = item.map(item => item[1]).filter(item => item > 0)
             if (greaterNullValues.length === 0) {
                 return true
             }
@@ -139,7 +122,7 @@
                 min: greaterNullValues[0]
             })
 
-            return (max - min + 1) <= stretch
+            return (max - min + 1) <= STRETCH_SIZE
         })
     }
 
@@ -150,25 +133,38 @@
 
     function processData(data) {
         const {
-            fretsCount,
-            stretch,
             chordType,
             instrumentTune,
             rootNote
         } = data
         const chord = getChord(rootNote, chordType)
         const tune = instrumentTune.split(',')
-        const frets = findMatchFrets(scale, tune, fretsCount, chord)
-        const allCombinations = findAllCombinations(frets)
-        const filteredOnlyUniqNotesCombinations = filterOnlyUniqNotesCombinations(allCombinations)
-        const filteredComfortableStretchCombinations = filterComfortableStretchCombinations(filteredOnlyUniqNotesCombinations, stretch)
-        const readyData = filteredComfortableStretchCombinations.map(item => {
-            return item.map(item => Object.values(item)[0])
+
+        const readyData = [
+            findAllCombinations,
+            filterOnlyUniqNotesCombinations,
+            filterComfortableStretchCombinations
+        ].reduce((acc,fn) => {
+            acc = fn(acc)
+            return acc
+        }, findMatchFrets(scale, tune, FRETS_COUNT, chord))
+            .map(item => {
+            return item.map(item => item[1])
         })
+
         return {
             data: readyData,
             tune
         }
+    }
+
+    function createDiv(className, content){
+        let div = document.createElement('div')
+        div.classList.add(className)
+        if(!!content){
+            div.textContent = content
+        }
+        return div
     }
 
 })()
