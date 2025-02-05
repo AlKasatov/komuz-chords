@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://alkasatov.github.io/komuz-chords/sitemap.xml
